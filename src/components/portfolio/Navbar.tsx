@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Download } from "lucide-react";
 
 const links = [
   { href: "#about", label: "About" },
@@ -6,6 +7,7 @@ const links = [
   { href: "#skills", label: "Skills" },
   { href: "#profiles", label: "Profiles" },
   { href: "#achievements", label: "Achievements" },
+  { href: "#resume", label: "Resume" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -92,10 +94,12 @@ export function Navbar() {
 
         {/* CTA - hidden below lg */}
         <a
-          href="#contact"
-          className="hidden lg:inline-flex items-center text-sm font-medium px-4 py-2 rounded-full border border-border hover:border-primary hover:text-primary transition-colors shrink-0"
+          href="/resume.pdf"
+          download
+          className="hidden lg:inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full border border-border hover:border-primary hover:text-primary transition-colors shrink-0"
         >
-          Get in touch
+          <Download className="w-3.5 h-3.5" />
+          Resume
         </a>
 
         {/* Hamburger */}
@@ -145,11 +149,13 @@ export function Navbar() {
           ))}
           <li className="pt-2 border-t border-border mt-2">
             <a
-              href="#contact"
+              href="/resume.pdf"
+              download
               onClick={() => setOpen(false)}
-              className="flex items-center justify-center h-10 text-sm font-medium rounded-full border border-border hover:border-primary hover:text-primary transition-colors mt-2"
+              className="flex items-center justify-center gap-2 h-10 text-sm font-medium rounded-full border border-border hover:border-primary hover:text-primary transition-colors mt-2"
             >
-              Get in touch
+              <Download className="w-3.5 h-3.5" />
+              Download Resume
             </a>
           </li>
         </ul>
