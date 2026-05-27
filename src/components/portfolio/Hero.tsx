@@ -1,3 +1,5 @@
+import { Download } from "lucide-react";
+
 export function Hero() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center pt-24">
@@ -23,6 +25,14 @@ export function Hero() {
             className="inline-flex items-center px-6 py-3 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity"
           >
             View projects
+          </a>
+          <a
+            href="/resume.pdf"
+            download
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border text-sm font-medium text-foreground hover:border-primary hover:text-primary transition-colors"
+          >
+            <Download className="w-4 h-4" />
+            Resume
           </a>
           <a
             href="#contact"
