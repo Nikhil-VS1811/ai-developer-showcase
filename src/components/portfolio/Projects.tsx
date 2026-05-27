@@ -1,5 +1,6 @@
 import { Section } from "./Section";
-import { Github, ExternalLink, Brain, FileText, BarChart3 } from "lucide-react";
+import { Github, ExternalLink } from "lucide-react";
+import { ChatPreview, DocQAPreview, DashboardPreview } from "./ProjectPreviews";
 
 const projects = [
   {
@@ -10,9 +11,7 @@ const projects = [
     stack: ["Flask", "React", "SQLite", "OpenAI API", "JWT", "SQLAlchemy"],
     github: "#",
     demo: "#",
-    icon: Brain,
-    gradient: "from-amber-900/40 via-teal-900/30 to-background",
-    accent: "text-amber-400",
+    Preview: ChatPreview,
   },
   {
     name: "DocuQuery",
@@ -22,9 +21,7 @@ const projects = [
     stack: ["Flask", "LangChain", "ChromaDB", "React", "OpenAI API"],
     github: "#",
     demo: "#",
-    icon: FileText,
-    gradient: "from-blue-900/40 via-indigo-900/30 to-background",
-    accent: "text-blue-400",
+    Preview: DocQAPreview,
   },
   {
     name: "DevDash",
@@ -34,9 +31,7 @@ const projects = [
     stack: ["Flask", "React", "Redis", "GitHub API", "Chart.js"],
     github: "#",
     demo: "#",
-    icon: BarChart3,
-    gradient: "from-emerald-900/40 via-green-900/30 to-background",
-    accent: "text-emerald-400",
+    Preview: DashboardPreview,
   },
 ];
 
@@ -50,24 +45,17 @@ export function Projects() {
     >
       <div className="grid md:grid-cols-2 gap-6">
         {projects.map((p) => {
-          const Icon = p.icon;
+          const Preview = p.Preview;
           return (
             <div
               key={p.name}
               className="group flex flex-col rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/40 transition-all duration-300 hover:-translate-y-0.5"
             >
-              {/* Image placeholder */}
-              <div
-                className={`relative h-48 bg-gradient-to-br ${p.gradient} flex items-center justify-center overflow-hidden`}
-              >
-                <div className="absolute inset-0 opacity-30">
-                  <div className="absolute top-4 left-4 w-32 h-32 rounded-full bg-current blur-3xl opacity-20" />
-                  <div className="absolute bottom-4 right-4 w-24 h-24 rounded-full bg-current blur-2xl opacity-15" />
+              {/* UI preview */}
+              <div className="relative h-56 bg-gradient-to-br from-muted/40 to-background border-b border-border overflow-hidden">
+                <div className="absolute inset-0 p-5 flex items-center justify-center">
+                  <Preview />
                 </div>
-                <Icon
-                  className={`relative z-10 w-12 h-12 ${p.accent} opacity-80 group-hover:scale-110 transition-transform duration-300`}
-                  strokeWidth={1.5}
-                />
               </div>
 
               {/* Content */}
