@@ -30,7 +30,7 @@ export function Navbar() {
     >
       <nav className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
         <a href="#hero" className="font-mono text-sm tracking-tight text-foreground">
-          <span className="text-primary">/</span>arjun.dev
+          <span className="text-primary">/</span>nikhil.dev
         </a>
         <ul className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           {links.map((l) => (
