@@ -11,10 +11,10 @@ import { Contact } from "@/components/portfolio/Contact";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Arjun — AI-focused Full Stack Developer" },
-      { name: "description", content: "Portfolio of Arjun, a full stack developer building production-grade AI products with React, TypeScript and modern LLM infrastructure." },
-      { property: "og:title", content: "Arjun — AI-focused Full Stack Developer" },
-      { property: "og:description", content: "Selected projects, skills and recognition from an engineer shipping intelligent web products." },
+      { title: "Nikhil VS — AI-Focused Full Stack Developer" },
+      { name: "description", content: "Portfolio of Nikhil VS, a full stack developer building practical AI-powered web applications with Flask, modern frontend tech, and intelligent workflows." },
+      { property: "og:title", content: "Nikhil VS — AI-Focused Full Stack Developer" },
+      { property: "og:description", content: "Projects, skills and coding profiles from a developer who ships end-to-end AI products." },
     ],
   }),
   component: Index,
